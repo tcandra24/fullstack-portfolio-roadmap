@@ -1,0 +1,14 @@
+Remix dan RR v7 berbagi DNA — proyek ini ideal untuk merasakan loader/action pattern. Backend Express yang sama dipakai keduanya, jadi perbandingan murni ada di layer routing dan data loading pattern-nya.
+
+Fitur yang dibangun:
+- Listing produk + filter & sort
+- Detail produk + related items
+- Cart dengan URL state
+- Search dengan query params
+- Optimistic UI add to cart
+
+Breakdown teknologi:
+- Remix: loader, action, Form, useFetcher, nested routes
+- RR v7: clientLoader, serverLoader, type-safe params, middleware
+- Express: REST API produk, middleware auth, error handling
+- Prisma: Relasi produk-kategori, filtering query

@@ -1,0 +1,15 @@
+Microservice ringan: Express untuk core API, Hono untuk edge functions (notifikasi, webhook). Frontend split: Nuxt untuk storefront yang butuh SEO, RR v7 untuk seller dashboard SPA. Ini mensimulasikan arsitektur startup yang sudah scale.
+
+Fitur yang dibangun:
+- Storefront publik (Nuxt, SEO)
+- Seller dashboard (RR v7)
+- API produk/order (Express)
+- API notifikasi edge (Hono)
+- Inventory & order management
+
+Breakdown teknologi:
+- Nuxt: SSR storefront, nuxt-image, structured data SEO
+- RR v7: Dashboard seller, type-safe routes, clientLoader
+- Express: Core REST API, multer upload, cron job stok
+- Hono: Edge API untuk webhook Midtrans/Stripe, rate limiting
+- Drizzle: Multi-tenant schema, transaction, query batching

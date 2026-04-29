@@ -1,0 +1,12 @@
+T3 Stack (Next.js + tRPC + Tailwind + Auth.js + Prisma/Drizzle) adalah project tersendiri yang wajib dicoba. Ini adalah stack paling lengkap yang type-safe dari frontend sampai database. Minggu ini kamu akan merasakan betapa berbedanya DX dengan tRPC vs REST biasa.
+
+Fitur yang dibangun:
+- Overview KPI dengan metric cards
+- Chart interaktif (line, bar, heatmap)
+- Date range picker + global filter
+- Multi-tenant workspace
+- Billing page (Stripe mock)
+
+Breakdown teknologi:
+- T3 Stack: tRPC router + React Query, Next.js App Router, Auth.js
+- Drizzle: Drizzle sebagai alternatif Prisma di T3, type inference penuh

@@ -1,0 +1,77 @@
+erDiagram
+
+    USERS {
+        UUID id PK
+        string name
+        string email
+        string password
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    ACCOUNTS {
+        UUID id PK
+        UUID user_id FK
+        string name
+        decimal balance
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    CATEGORIES {
+        UUID id PK
+        UUID user_id FK
+        string name
+        enum type
+        string color
+        string icon
+    }
+
+    TRANSACTIONS {
+        UUID id PK
+        UUID user_id FK
+        UUID account_id FK
+        UUID category_id FK
+        enum type
+        decimal amount
+        text note
+        date transaction_date
+        timestamp created_at
+        timestamp updated_at
+    }
+
+    RECURRING_TRANSACTIONS {
+        UUID id PK
+        UUID user_id FK
+        UUID account_id FK
+        UUID category_id FK
+        enum type
+        decimal amount
+        enum frequency
+        date next_run_date
+    }
+
+    BUDGETS {
+        UUID id PK
+        UUID user_id FK
+        UUID category_id FK
+        decimal amount
+        string month
+    }
+
+    ATTACHMENTS {
+        UUID id PK
+        UUID transaction_id FK
+        string file_url
+    }
+
+    USERS --o{ ACCOUNTS  owns
+    USERS --o{ CATEGORIES  owns
+    USERS --o{ TRANSACTIONS  creates
+    USERS --o{ RECURRING_TRANSACTIONS  schedules
+    USERS --o{ BUDGETS  sets
+
+    ACCOUNTS --o{ TRANSACTIONS  used_in
+    CATEGORIES --o{ TRANSACTIONS  categorizes
+
+    TRANSACTIONS --o{ ATTACHMENTS  has

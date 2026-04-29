@@ -1,0 +1,14 @@
+Form kompleks + tabel data adalah kebutuhan enterprise paling umum. Vue Composition API + Nuxt server routes adalah stack yang sangat produktif untuk use case ini. Hono di sini menunjukkan kemampuannya sebagai backend ringan yang tetap bisa handle logika bisnis kompleks.
+
+Fitur yang dibangun:
+- Listing lowongan + advanced filter
+- Multi-step application form
+- Dashboard recruiter + pipeline Kanban
+- Status tracking per aplikant
+- Export data CSV
+
+Breakdown teknologi:
+- Vue: VeeValidate + Zod, defineModel, composables
+- Nuxt: Server routes, useLazyFetch, Nuxt UI
+- Hono: Middleware chain, file upload, CSV stream response
+- Drizzle: Join query kompleks, aggregate, filter dinamis

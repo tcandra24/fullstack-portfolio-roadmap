@@ -1,0 +1,14 @@
+WebSocket + SSR adalah kombinasi tricky. Next.js menangani UI dengan server components, sementara NestJS WebSocket Gateway mengelola real-time connection. Drizzle dipakai untuk merasakan perbedaan query pattern dengan Prisma.
+
+Fitur yang dibangun:
+- Room-based chat dengan WebSocket
+- Online presence indicator
+- Infinite scroll riwayat pesan
+- Upload gambar/file
+- Push notification browser
+
+Breakdown teknologi:
+- Next.js: Server components + client WebSocket, optimistic messages
+- React: Standalone React app versi kedua sebagai perbandingan
+- NestJS: @WebSocketGateway, Socket.io integration, event guards
+- Drizzle: Real-time query, cursor pagination pesan

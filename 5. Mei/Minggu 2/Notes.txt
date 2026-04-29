@@ -1,0 +1,14 @@
+Benchmark SSG vs SSR yang nyata. Hono dipilih sebagai backend karena ultra-ringan dan bisa deploy ke edge (Cloudflare Workers). Drizzle pertama kali digunakan di sini untuk perbandingan dengan Prisma di project sebelumnya.
+
+Fitur yang dibangun:
+- Daftar & detail artikel (SSG/SSR)
+- Admin panel CRUD artikel
+- Markdown rendering
+- Tag & kategori filtering
+- SEO meta tags
+
+Breakdown teknologi:
+- Next.js: App Router, generateStaticParams, server components
+- Nuxt: @nuxt/content atau fetch dari API, file-based routing
+- Hono: Hono RPC, zod validator, deploy ke Cloudflare Workers
+- Drizzle: Schema definition, query builder, migration

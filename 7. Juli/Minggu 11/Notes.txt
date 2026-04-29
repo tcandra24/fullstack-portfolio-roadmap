@@ -1,0 +1,14 @@
+Project untuk developer oleh developer - ini yang paling diingat recruiter teknikal. React standalone untuk app utama, Hono sebagai proxy API (untuk bypass CORS), T3 untuk fitur kolaborasi share. Menunjukkan kamu bisa buat developer tooling.
+
+Fitur yang dibangun:
+- Import OpenAPI spec & visualisasi endpoint
+- Request builder dengan auth support
+- Response diff & history
+- Code snippet generator (curl, fetch, axios)
+- Share collection via link
+
+Breakdown teknologi:
+- React: Monaco Editor, complex state dengan Zustand, drag-drop UI
+- T3 Stack: tRPC untuk fitur share/kolaborasi, Auth.js
+- Hono: Proxy endpoint, rate limiting, edge deployment
+- Drizzle: History query, shared collection schema

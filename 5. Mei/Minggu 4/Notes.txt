@@ -1,0 +1,13 @@
+Angular + NestJS adalah pasangan natural — keduanya TypeScript-first, berbasis decorator, dan sangat opinionated. Ini adalah minggu untuk merasakan DX enterprise-grade. NestJS modules, guards, dan pipes akan terasa familiar setelah belajar Angular.
+
+Fitur yang dibangun:
+- Board dengan drag & drop kolom
+- CRUD card/task
+- Assign member + due date
+- Label & priority filter
+- WebSocket real-time update posisi card
+
+Breakdown teknologi:
+- Angular: Signals, CDK DragDrop, standalone components, Angular Material
+- NestJS: Modules, Guards, Pipes, WebSocket Gateway, Swagger
+- Prisma: Relasi task-board-user, prisma.$transaction

@@ -1,0 +1,13 @@
+Social feed adalah ujian terberat untuk data fetching strategy. Remix progressive enhancement + NestJS sebagai backend terpisah menunjukkan pola fullstack yang banyak dipakai di startup. Prisma mengelola relasi data yang kompleks (user-post-like-follow).
+
+Fitur yang dibangun:
+- Feed dengan infinite scroll
+- Create post teks + gambar
+- Like, comment, reply bersarang
+- Profile page + follow system
+- Explore & hashtag search
+
+Breakdown teknologi:
+- Remix: defer/Await streaming, useFetcher optimistic like
+- NestJS: REST + interceptors, image upload ke S3/Cloudinary
+- Prisma: Nested relations, cursor pagination, full-text search

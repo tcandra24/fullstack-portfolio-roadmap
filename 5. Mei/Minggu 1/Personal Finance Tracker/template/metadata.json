@@ -1,0 +1,6 @@
+{
+  "name": "FinanceTracker",
+  "description": "A high-fidelity wealth management and personal finance dashboard for tracking balances, budgets, and spending trends.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

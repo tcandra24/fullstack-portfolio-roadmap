@@ -1,0 +1,14 @@
+Project kompleks yang mensimulasikan produk nyata. Next.js untuk landing + student portal (SEO penting), Angular untuk dashboard instruktur (fitur berat, interaksi kompleks). NestJS mengelola semua business logic dengan module yang terpisah rapi.
+
+Fitur yang dibangun:
+- Catalog kursus + enrollment
+- Video player dengan progress tracking
+- Quiz interaktif per chapter
+- Dashboard instruktur
+- Certificate generator (PDF)
+
+Breakdown teknologi:
+- Next.js: Hybrid rendering: SSG catalog, SSR progress, RSC
+- Angular: Lazy-loaded feature modules, role-based UI
+- NestJS: CQRS pattern, event emitter, bull queue untuk PDF
+- Prisma: Schema kompleks, prisma.$extends, soft delete

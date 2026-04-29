@@ -1,0 +1,14 @@
+Project penutup yang paling relevan di 2025. Streaming AI response + SSR adalah kombinasi yang tricky — Next.js sangat cocok untuk ini (Vercel AI SDK). Remix versi menunjukkan progressive enhancement: AI bekerja bahkan tanpa JS. NestJS mengelola semua prompt engineering di server.
+
+Fitur yang dibangun:
+- Editor teks dengan AI autocomplete
+- Generate, rewrite, summarize konten
+- Template library
+- Riwayat dokumen + versioning
+- Export ke PDF/DOCX
+
+Breakdown teknologi:
+- Next.js: Vercel AI SDK, streaming RSC, useChat hook
+- Remix: EventStream SSE, progressive enhancement, action streaming
+- NestJS: OpenAI/Anthropic SDK, SSE endpoint, prompt chaining
+- Prisma: Document versioning, diff storage, user quota tracking

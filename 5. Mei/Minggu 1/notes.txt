@@ -1,0 +1,21 @@
+Project pembuka: bangun REST API dengan Express + Prisma sekali, lalu konsumsi dari dua frontend berbeda (React dan Vue). Kamu langsung belajar perbedaan state management dan cara fetch data di dua framework sekaligus.
+
+CSS:
+- Tailwind
+- ShadCN
+
+Fitur yang dibangun:
+- Dashboard pemasukan & pengeluaran
+- CRUD transaksi + kategori
+- Chart visualisasi bulanan
+- REST API dengan Express
+- Auth sederhana (JWT)
+
+Breakdown teknologi:
+- React: useState/useReducer, custom hooks, fetch dari API
+- Vue: Composition API, Pinia, useFetch pattern
+- Express: Router, middleware, controller pattern
+- Prisma: Schema, migration, CRUD dengan Prisma Client
+
+AI-Assistant
+https://chatgpt.com/c/69f1af1c-a544-8324-af1d-cf274d75f665
