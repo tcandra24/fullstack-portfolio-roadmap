@@ -12,3 +12,6 @@ Breakdown teknologi:
 - Nuxt: @nuxt/content atau fetch dari API, file-based routing
 - Hono: Hono RPC, zod validator, deploy ke Cloudflare Workers
 - Drizzle: Schema definition, query builder, migration
+
+AI-Assistant
+https://chatgpt.com/c/69f205ef-7ba8-8320-bebb-f6366715fcad
