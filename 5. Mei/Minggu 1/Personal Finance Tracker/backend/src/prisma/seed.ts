@@ -6,25 +6,25 @@
 //       Useful for populating dev/test databases with dummy data.
 // ─────────────────────────────────────────────────────────────
 
-import prisma from '../config/prisma';
+import prisma from "../config/prisma";
 
 async function main() {
-  console.log('🌱 Seeding database...');
+  console.log("🌱 Seeding database...");
 
   await prisma.user.createMany({
     data: [
-      { name: 'Alice', email: 'alice@example.com' },
-      { name: 'Bob', email: 'bob@example.com' },
+      { name: "Alice", email: "alice@example.com", password: "password123" },
+      { name: "Bob", email: "bob@example.com", password: "password123" },
     ],
     skipDuplicates: true, // NOTE: Prevents errors if seeds already exist
   });
 
-  console.log('✅ Seeding complete');
+  console.log("✅ Seeding complete");
 }
 
 main()
   .catch((e) => {
-    console.error('❌ Seed failed:', e);
+    console.error("❌ Seed failed:", e);
     process.exit(1);
   })
   .finally(async () => {
