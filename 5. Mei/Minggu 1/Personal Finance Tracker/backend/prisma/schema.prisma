@@ -1,0 +1,133 @@
+// prisma/schema.prisma
+// ─────────────────────────────────────────────────────────────
+// NOTE: After editing this file, always run:
+//   npm run prisma:generate   → regenerates the Prisma Client
+//   npm run prisma:migrate    → applies changes to the DB
+// ─────────────────────────────────────────────────────────────
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // Supported providers: postgresql | mysql | sqlite | sqlserver | mongodb
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum CategoryType {
+  INCOME
+  EXPENSE
+}
+
+enum TransactionType {
+  INCOME
+  EXPENSE
+}
+
+enum RecurringFrequency {
+  DAILY
+  WEEKLY
+  MONTHLY
+  YEARLY
+}
+
+model User {
+  id                    String                 @id @default(cuid())
+  name                  String
+  email                 String                 @unique
+  password              String
+  accounts              Account[]
+  created_at            DateTime               @default(now())
+  updated_at            DateTime               @updatedAt
+  budgets               Budget[]
+  recurringTransactions RecurringTransaction[]
+  transactions          Transaction[]
+
+  @@map("users")
+}
+
+model Account {
+  id                    String                 @id @default(cuid())
+  user_id               String
+  user                  User                   @relation(fields: [user_id], references: [id])
+  name                  String
+  decimal               Float
+  created_at            DateTime               @default(now())
+  updated_at            DateTime               @updatedAt
+  recurringTransactions RecurringTransaction[]
+  transactions          Transaction[]
+
+  @@map("accounts")
+}
+
+model Category {
+  id                    String                 @id @default(cuid())
+  name                  String
+  type                  CategoryType
+  color                 String
+  icon                  String
+  budgets               Budget[]
+  recurringTransactions RecurringTransaction[]
+  transactions          Transaction[]
+
+  @@map("categories")
+}
+
+model Budget {
+  id          String   @id @default(cuid())
+  user_id     String
+  user        User     @relation(fields: [user_id], references: [id])
+  category_id String
+  category    Category @relation(fields: [category_id], references: [id])
+  amount      Float
+  month       Int
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  @@map("budgets")
+}
+
+model RecurringTransaction {
+  id            String             @id @default(cuid())
+  user_id       String
+  user          User               @relation(fields: [user_id], references: [id])
+  account_id    String
+  account       Account            @relation(fields: [account_id], references: [id])
+  category_id   String
+  category      Category           @relation(fields: [category_id], references: [id])
+  type          TransactionType
+  amount        Float
+  frequency     RecurringFrequency
+  next_run_date DateTime
+
+  @@map("recurring_transactions")
+}
+
+model Transaction {
+  id          String          @id @default(cuid())
+  user_id     String
+  user        User            @relation(fields: [user_id], references: [id])
+  account_id  String
+  account     Account         @relation(fields: [account_id], references: [id])
+  category_id String
+  category    Category        @relation(fields: [category_id], references: [id])
+  type        TransactionType
+  amount      Float
+  note        String
+  date        DateTime
+  created_at  DateTime        @default(now())
+  updated_at  DateTime        @updatedAt
+  attachments Attachment[]
+
+  @@map("transactions")
+}
+
+model Attachment {
+  id             String      @id @default(cuid())
+  transaction_id String
+  transaction    Transaction @relation(fields: [transaction_id], references: [id])
+  file_url       String
+
+  @@map("attachments")
+}

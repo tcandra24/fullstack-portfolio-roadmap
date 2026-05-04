@@ -16,6 +16,9 @@ Breakdown teknologi:
 - Vue: Composition API, Pinia, useFetch pattern
 - Express: Router, middleware, controller pattern
 - Prisma: Schema, migration, CRUD dengan Prisma Client
+- Axios: fetch data plugin
+- Tanstack query: plugin handle cache & fetch data
 
 AI-Assistant
 https://chatgpt.com/c/69f1af1c-a544-8324-af1d-cf274d75f665
+https://claude.ai/chat/6a16f7cb-1a47-4675-b8df-174f2d4659d0

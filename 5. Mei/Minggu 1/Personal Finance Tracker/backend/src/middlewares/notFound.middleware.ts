@@ -1,0 +1,14 @@
+// src/middlewares/notFound.middleware.ts
+// ─────────────────────────────────────────────────────────────
+// 404 catch-all middleware.
+// NOTE: Register this AFTER all route definitions in app.ts.
+// ─────────────────────────────────────────────────────────────
+
+import { Request, Response } from 'express';
+
+export const notFound = (req: Request, res: Response): void => {
+  res.status(404).json({
+    success: false,
+    message: `Route not found: ${req.method} ${req.originalUrl}`,
+  });
+};
