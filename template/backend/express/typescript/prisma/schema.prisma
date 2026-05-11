@@ -1,0 +1,44 @@
+// prisma/schema.prisma
+// ─────────────────────────────────────────────────────────────
+// NOTE: After editing this file, always run:
+//   npm run prisma:generate   → regenerates the Prisma Client
+//   npm run prisma:migrate    → applies changes to the DB
+// ─────────────────────────────────────────────────────────────
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // Supported providers: postgresql | mysql | sqlite | sqlserver | mongodb
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum CategoryType {
+  INCOME
+  EXPENSE
+}
+
+enum TransactionType {
+  INCOME
+  EXPENSE
+}
+
+enum RecurringFrequency {
+  DAILY
+  WEEKLY
+  MONTHLY
+  YEARLY
+}
+
+model User {
+  id         String   @id @default(cuid())
+  name       String
+  email      String   @unique
+  password   String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  @@map("users")
+}
