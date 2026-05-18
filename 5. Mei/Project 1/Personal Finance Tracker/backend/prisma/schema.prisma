@@ -43,6 +43,7 @@ model User {
   budgets               Budget[]
   recurringTransactions RecurringTransaction[]
   transactions          Transaction[]
+  categories            Category[]
 
   @@map("users")
 }
@@ -64,6 +65,8 @@ model Account {
 model Category {
   id                    String                 @id @default(cuid())
   name                  String
+  user_id               String
+  user                  User                   @relation(fields: [user_id], references: [id])
   type                  CategoryType
   color                 String
   icon                  String
@@ -82,6 +85,7 @@ model Budget {
   category    Category @relation(fields: [category_id], references: [id])
   amount      Float
   month       Int
+  year        Int
   created_at  DateTime @default(now())
   updated_at  DateTime @updatedAt
 
